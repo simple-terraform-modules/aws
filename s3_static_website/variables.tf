@@ -1,5 +1,5 @@
 variable "name" {
-  description = "Bucket name; it should match the website domain exactly"
+  description = "The bucket name; it should match the website domain exactly"
   type        = string
 }
 
@@ -10,13 +10,13 @@ variable "tags" {
 }
 
 variable "index_document" {
-  description = "Index document path"
+  description = "The index document path"
   type        = string
   default     = "index.html"
 }
 
 variable "error_document" {
-  description = "Error document path"
+  description = "The error document path"
   type        = string
   default     = "error.html"
 }
