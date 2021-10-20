@@ -9,7 +9,7 @@ for background.
 
 Create a static S3 bucket with default settings:
 ```terraform
-module "appaloosa_web_bucket" {
+module "my_static_website" {
   source = "github.com/simple-terraform-modules/aws/s3_static_website"
   name = "www.example.com"
 }
