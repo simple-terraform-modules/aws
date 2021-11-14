@@ -10,15 +10,7 @@ resource "aws_s3_bucket" "bucket" {
   }
 }
 
-data "template_file" "policy_template" {
-  template = file("${path.module}/bucket_policy.json")
-
-  vars = {
-    bucket = aws_s3_bucket.bucket.arn
-  }
-}
-
 resource "aws_s3_bucket_policy" "bucket_policy" {
   bucket = aws_s3_bucket.bucket.id
-  policy = data.template_file.policy_template.rendered
+  policy = templatefile("${path.module}/bucket_policy.json", {bucket = aws_s3_bucket.bucket.arn})
 }
